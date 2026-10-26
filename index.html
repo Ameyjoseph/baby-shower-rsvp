@@ -816,6 +816,7 @@
         message: document.getElementById("message").value.trim()
       };
 
+      const isAttending = data.attending === "Yes";
       submitButton.disabled = true;
       submitButton.textContent = "Sending your RSVP...";
       formStatus.textContent = "";
@@ -932,20 +933,34 @@ popup.innerHTML = `
     🩷 🎀 🧸 🌸
   </div>
 
-  <p style="
-    font-family:'Cormorant Garamond',serif;
-    font-size:21px;
-    line-height:1.6;
-    color:#80516a;
-  ">
-    Thank you for your sweet RSVP!
-    <br>
+  
+<p style="
+  font-family:'Cormorant Garamond',serif;
+  font-size:21px;
+  line-height:1.6;
+  color:#80516a;
+">
+  ${isAttending ? `
+    Thank you for your sweet RSVP! 💗
+    <br><br>
     A tiny little miracle, a whole lot of love,
     and beautiful memories waiting to be made.
     <br><br>
     Your love makes this celebration
-    even more magical! 💗
-  </p>
+    even more magical! 🌸
+  ` : `
+    Thank you for letting us know! 💗
+    <br><br>
+    We're sorry you won't be able to
+    celebrate with us, but you'll be
+    in our hearts on this special day.
+    <br><br>
+    Please keep our little princess in
+    your thoughts and prayers as we
+    prepare to welcome her into the world. 🌸💕
+  `}
+</p>
+
 
   <div style="
     font-size:20px;
