@@ -825,34 +825,170 @@
         
 rsvpForm.reset();
 
+
+
 const popup = document.createElement("div");
-popup.textContent = "🎀 Thank you for your RSVP! 💗";
+
+popup.innerHTML = `
+  <style>
+    @keyframes thankYouTwinkle {
+      0%, 100% {
+        opacity: 0.4;
+        transform: scale(0.7) rotate(-10deg);
+      }
+      50% {
+        opacity: 1;
+        transform: scale(1.3) rotate(15deg);
+      }
+    }
+
+    @keyframes thankYouFloat {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    @keyframes thankYouGlow {
+      0%, 100% {
+        box-shadow: 0 0 15px #f9c6da;
+      }
+      50% {
+        box-shadow: 0 0 35px #f4a2c4;
+      }
+    }
+
+    .thank-you-sparkle {
+      position: absolute;
+      color: #d8759b;
+      font-size: 25px;
+      animation: thankYouTwinkle 2s infinite;
+    }
+
+    .thank-you-bows {
+      font-size: 35px;
+      animation: thankYouFloat 3s infinite;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .thank-you-sparkle,
+      .thank-you-bows {
+        animation: none;
+      }
+    }
+  </style>
+
+  <span class="thank-you-sparkle"
+    style="top:15px;left:20px;">✧</span>
+
+  <span class="thank-you-sparkle"
+    style="top:30px;right:25px;animation-delay:.5s;">✦</span>
+
+  <span class="thank-you-sparkle"
+    style="bottom:20px;left:25px;animation-delay:1s;">✧</span>
+
+  <span class="thank-you-sparkle"
+    style="bottom:25px;right:20px;animation-delay:1.5s;">✦</span>
+
+  <div class="thank-you-bows">
+    🎀 🌸 🎀
+  </div>
+
+  <div style="
+    color:#c47a99;
+    letter-spacing:5px;
+    margin:12px 0;
+  ">
+    ✨ ♡ ✨
+  </div>
+
+  <h2 style="
+    font-family:'Great Vibes',cursive;
+    font-size:65px;
+    color:#a34770;
+    margin:10px 0;
+    text-shadow:0 0 15px #f7c7d9;
+  ">
+    Thank You!
+  </h2>
+
+  <p style="
+    font-family:'Cormorant Garamond',serif;
+    font-size:25px;
+    font-weight:600;
+    color:#a34770;
+  ">
+    A little princess is on her way! 👑
+  </p>
+
+  <div style="font-size:27px;margin:12px 0;">
+    🩷 🎀 🧸 🌸
+  </div>
+
+  <p style="
+    font-family:'Cormorant Garamond',serif;
+    font-size:21px;
+    line-height:1.6;
+    color:#80516a;
+  ">
+    Thank you for your sweet RSVP!
+    <br>
+    A tiny little miracle, a whole lot of love,
+    and beautiful memories waiting to be made.
+    <br><br>
+    Your love makes this celebration
+    even more magical! 💗
+  </p>
+
+  <div style="
+    font-size:20px;
+    color:#d8759b;
+    margin:12px 0;
+  ">
+    ✨ 🌷 ♡ 🌷 ✨
+  </div>
+
+  <div style="
+    font-family:'Great Vibes',cursive;
+    font-size:39px;
+    color:#a34770;
+    margin-top:15px;
+  ">
+    With Love, Amey ♡
+  </div>
+
+  <div style="
+    font-size:13px;
+    letter-spacing:2px;
+    color:#bd87a0;
+    margin-top:12px;
+  ">
+    NOVEMBER 29, 2026
+  </div>
+`;
 
 Object.assign(popup.style, {
   position: "fixed",
-  top: "25px",
+  top: "50%",
   left: "50%",
-  transform: "translateX(-50%)",
-  background: "#fff0f5",
-  color: "#a34770",
-  border: "2px solid #d8759b",
-  borderRadius: "20px",
-  padding: "16px 28px",
-  fontFamily: "'DM Sans', sans-serif",
-  fontSize: "16px",
-  fontWeight: "600",
+  transform: "translate(-50%, -50%)",
+  background: "linear-gradient(145deg, #fffafd, #ffeaf3)",
+  color: "#80516a",
+  border: "2px solid #eab5cb",
+  borderRadius: "30px",
+  padding: "32px 28px",
   textAlign: "center",
-  boxShadow: "0 8px 25px rgba(216,117,155,0.25)",
+  boxShadow: "0 15px 60px rgba(216,117,155,0.35)",
   zIndex: "9999",
-  maxWidth: "90%",
-  width: "max-content"
+  width: "440px",
+  maxWidth: "92%",
+  maxHeight: "90vh",
+  overflowY: "auto"
 });
+
+popup.style.isolation = "isolate";
 
 document.body.appendChild(popup);
 
-setTimeout(() => {
-  popup.remove();
-}, 3000);
+
 
       } catch (error) {
         formStatus.textContent =
