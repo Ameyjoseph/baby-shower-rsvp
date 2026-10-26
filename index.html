@@ -604,6 +604,62 @@
   }
 }
 
+/* MATCHING HEART BUTTONS */
+.princess-heart-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+  flex-wrap: nowrap;
+  margin-top: 25px;
+}
+
+.princess-heart-buttons .heart-rsvp {
+  margin-top: 0;
+  flex: 0 0 170px;
+}
+
+.registry-heart {
+  animation-delay: .4s;
+}
+
+@media (max-width: 600px) {
+  .princess-heart-buttons {
+    gap: 6px;
+  }
+
+  .princess-heart-buttons .heart-rsvp {
+    width: 145px;
+    height: 145px;
+    flex: 0 0 145px;
+  }
+
+  .princess-heart-buttons .heart-rsvp::before {
+    font-size: 175px;
+  }
+
+  .princess-heart-buttons .heart-rsvp span {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 350px) {
+  .princess-heart-buttons {
+    gap: 0;
+  }
+
+  .princess-heart-buttons .heart-rsvp {
+    width: 130px;
+    height: 135px;
+    flex-basis: 130px;
+  }
+
+  .princess-heart-buttons .heart-rsvp::before {
+    font-size: 155px;
+  }
+}
+
   </style>
 </head>
 
@@ -644,32 +700,35 @@
 
     <div class="small-script">With love, we invite you...</div>
 
-    <a href="#rsvp" class="heart-rsvp" id="heartRsvp"
-       aria-label="Kindly RSVP, jump to the RSVP form">
-      <span>Kindly<br>RSVP ♡</span>
-      <b class="sparkle one" aria-hidden="true">✦</b>
-      <b class="sparkle two" aria-hidden="true">✧</b>
-      <b class="sparkle three" aria-hidden="true">✦</b>
-    </a>
+    
+<div class="princess-heart-buttons">
 
-<a
-  href="https://www.amazon.com/baby-reg/feby-febin-january-2027-denton/255Y771G9LL1A"
-  class="crib-registry"
-  target="_blank"
-  rel="noopener noreferrer"
-  aria-label="View our baby registry"
->
-  <span class="crib-sparkle crib-sparkle-one">✦</span>
-  <span class="crib-sparkle crib-sparkle-two">✧</span>
-  <span class="crib-sparkle crib-sparkle-three">✦</span>
+  <a href="#rsvp" class="heart-rsvp" id="heartRsvp"
+     aria-label="Kindly RSVP">
+    <span>Kindly<br>RSVP ♡</span>
+    <b class="sparkle one" aria-hidden="true">✦</b>
+    <b class="sparkle two" aria-hidden="true">✧</b>
+    <b class="sparkle three" aria-hidden="true">✦</b>
+  </a>
 
-  <span class="crib-icon">🛏️🎀</span>
-  <span class="crib-label">Baby Registry ♡</span>
-</a>
+  <a
+    href="https://www.amazon.com/baby-reg/feby-febin-january-2027-denton/255Y771G9LL1A"
+    class="heart-rsvp registry-heart"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="View our baby registry"
+  >
+    <span>Baby<br>Registry ♡</span>
+    <b class="sparkle one" aria-hidden="true">✦</b>
+    <b class="sparkle two" aria-hidden="true">✧</b>
+    <b class="sparkle three" aria-hidden="true">✦</b>
+  </a>
+
+</div>
 
 
     <p style="font-size:12px;letter-spacing:2px;margin-top:20px">
-      TAP THE HEART TO RSVP
+      TAP THE HEART TO RSVP OR VIEW OUR REGISTRY
     </p>
   </section>
 
