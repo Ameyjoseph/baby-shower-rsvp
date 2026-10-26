@@ -316,16 +316,29 @@
       color: var(--rose);
     }
 
+    /* ELEGANT TIME AND ADDRESS FONT */
     .detail-label {
-      font-size: 11px;
+      font-family: "DM Sans", sans-serif;
+      font-size: 12px;
       letter-spacing: 3px;
       text-transform: uppercase;
-      color: #a86a83;
+      color: #b16b88;
     }
 
     .detail-value {
-      font-size: 19px;
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: clamp(23px, 3vw, 29px);
+      font-weight: 600;
+      line-height: 1.35;
+      color: var(--rose);
       margin-top: 8px;
+    }
+
+    #locationText {
+      overflow-wrap: anywhere;
+      max-width: 330px;
+      margin-left: auto;
+      margin-right: auto;
     }
 
     .countdown {
@@ -371,6 +384,38 @@
       background: var(--dark-pink);
       color: white;
       transform: translateY(-3px);
+    }
+
+    /* SMALLER DRESS CODE AND REGISTRY BOXES */
+    .compact-card {
+      max-width: 540px !important;
+      padding: 32px 28px;
+      border-radius: 25px;
+    }
+
+    .compact-card .section-title {
+      font-size: clamp(56px, 8vw, 76px);
+    }
+
+    .compact-card .floral {
+      font-size: 27px;
+      margin: 5px 0 12px;
+    }
+
+    .compact-card p {
+      max-width: 430px;
+      margin-left: auto;
+      margin-right: auto;
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: 22px;
+      font-weight: 500;
+      line-height: 1.55;
+      color: #80516a;
+    }
+
+    .compact-card .btn-pink {
+      padding: 12px 25px;
+      font-size: 14px;
     }
 
     .form-control,
@@ -422,9 +467,17 @@
         padding: 38px 20px;
       }
 
+      .compact-card {
+        padding: 28px 20px;
+      }
+
       .floral {
         font-size: 24px;
         letter-spacing: 3px;
+      }
+
+      .detail-value {
+        font-size: 23px;
       }
 
       .countdown {
@@ -517,11 +570,9 @@
         </div>
 
         <div class="col-sm-6">
-  <div class="detail-label">Location</div>
-  <div class="detail-value" id="locationText">
-    5612 Las Lomas Ln, Denton, TX 76208
-  </div>
-</div>
+          <div class="detail-label">Location</div>
+          <div class="detail-value" id="locationText">
+            5612 Las Lomas Ln, Denton, TX 76208
           </div>
         </div>
       </div>
@@ -556,7 +607,7 @@
 
   <!-- DRESS CODE -->
   <section class="container pb-5 text-center">
-    <div class="invitation-card mx-auto" style="max-width:700px">
+    <div class="invitation-card compact-card mx-auto">
       <div class="floral" aria-hidden="true">🎀 🌸 🎀</div>
 
       <h2 class="section-title">Dress Code</h2>
@@ -567,9 +618,9 @@
     </div>
   </section>
 
-  <!-- GIFT REGISTRY -->
+  <!-- BABY REGISTRY -->
   <section class="container pb-5 text-center">
-    <div class="invitation-card mx-auto" style="max-width:700px">
+    <div class="invitation-card compact-card mx-auto">
       <div class="floral" aria-hidden="true">🎁 🎀 🎁</div>
 
       <h2 class="section-title">Baby Registry</h2>
@@ -675,7 +726,6 @@
 
   <script>
     // EVENT COUNTDOWN
-    // November 29, 2026 at 5 PM Central Standard Time
     const eventDate = new Date("2026-11-29T17:00:00-06:00");
 
     function updateCountdown() {
@@ -771,8 +821,7 @@
           body: JSON.stringify(data)
         });
 
-        // With no-cors, the browser cannot verify
-        // whether Google Sheets saved the response.
+        // no-cors does not confirm Google Sheets saved the RSVP.
         rsvpForm.style.display = "none";
         document.getElementById("thankYou").style.display = "block";
 
