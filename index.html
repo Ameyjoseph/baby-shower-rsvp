@@ -822,10 +822,38 @@
         });
 
         // no-cors does not confirm Google Sheets saved the RSVP.
-        rsvpForm.style.display = "none";
-        document.getElementById("thankYou").style.display = "block";
+        
+rsvpForm.reset();
 
-        rsvpForm.reset();
+const popup = document.createElement("div");
+popup.textContent = "🎀 Thank you for your RSVP! 💗";
+
+Object.assign(popup.style, {
+  position: "fixed",
+  top: "25px",
+  left: "50%",
+  transform: "translateX(-50%)",
+  background: "#fff0f5",
+  color: "#a34770",
+  border: "2px solid #d8759b",
+  borderRadius: "20px",
+  padding: "16px 28px",
+  fontFamily: "'DM Sans', sans-serif",
+  fontSize: "16px",
+  fontWeight: "600",
+  textAlign: "center",
+  boxShadow: "0 8px 25px rgba(216,117,155,0.25)",
+  zIndex: "9999",
+  maxWidth: "90%",
+  width: "max-content"
+});
+
+document.body.appendChild(popup);
+
+setTimeout(() => {
+  popup.remove();
+}, 3000);
+
       } catch (error) {
         formStatus.textContent =
           "We couldn't send your RSVP. Please try again.";
