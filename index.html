@@ -4,61 +4,355 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Baby Shower Invitation 🎀</title>
+  <title>A Little Princess Is on Her Way 🎀</title>
 
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Great+Vibes&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Great+Vibes&family=Italianno&family=Cormorant+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <style>
     :root {
       --pink: #d8759b;
+      --rose: #a34770;
+      --dark-pink: #91385e;
       --light-pink: #fff0f5;
-      --dark-pink: #9e466a;
+      --cream: #fffaf7;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
     }
 
     body {
       margin: 0;
+      overflow-x: hidden;
       background: #fff8fa;
       color: #694653;
       font-family: "DM Sans", sans-serif;
     }
 
     .hero {
-      min-height: 85vh;
-      padding: 100px 20px;
+      min-height: 100vh;
+      padding: 90px 20px;
       text-align: center;
       background:
-        radial-gradient(circle at 10% 20%, #fbd6e4, transparent 35%),
-        radial-gradient(circle at 90% 80%, #f7c8d9, transparent 35%),
-        #fff1f6;
+        radial-gradient(circle at 12% 20%, #fbd3e3, transparent 36%),
+        radial-gradient(circle at 88% 78%, #f6c4d8, transparent 40%),
+        linear-gradient(140deg, #fff6f9, #ffe6ef, #fff7fa);
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
+      position: relative;
+      overflow: hidden;
     }
 
-    .bow {
-      font-size: 65px;
-      margin-bottom: 20px;
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 24px;
+      border: 1px solid rgba(170, 73, 110, .25);
+      border-radius: 180px 180px 28px 28px;
+      pointer-events: none;
     }
 
-    .script {
-      font-family: "Great Vibes", cursive;
-      color: var(--dark-pink);
-      font-size: clamp(55px, 10vw, 105px);
-      line-height: 1.2;
+    .hero > *:not(.petals) {
+      position: relative;
+      z-index: 2;
     }
 
-    .subtitle {
-      letter-spacing: 4px;
+    .top-bow {
+      font-size: 78px;
+      animation: princessFloat 3s ease-in-out infinite;
+      filter: drop-shadow(0 8px 12px #e9a4bc);
+    }
+
+    @keyframes princessFloat {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-14px); }
+    }
+
+    .eyebrow {
+      font-size: 12px;
+      letter-spacing: 5px;
       text-transform: uppercase;
-      font-size: 13px;
-      color: var(--dark-pink);
+      color: var(--rose);
+      margin-top: 20px;
     }
 
-    .hero p {
-      max-width: 550px;
-      line-height: 1.9;
+    .hero-title {
+      font-family: "Italianno", "Great Vibes", cursive;
+      font-size: clamp(95px, 15vw, 185px);
+      line-height: 1;
+      color: var(--rose);
+      margin: 18px 0 12px;
+      text-shadow: 0 5px 16px #edb2c8;
+      animation: princessGlow 3s ease-in-out infinite alternate;
+    }
+
+    @keyframes princessGlow {
+      from {
+        text-shadow: 0 5px 15px #e9b6c9;
+      }
+      to {
+        text-shadow:
+          0 6px 25px #f19fbd,
+          0 0 45px #ffe4ee;
+      }
+    }
+
+    .crown {
+      font-size: 35px;
+      margin: 10px 0;
+    }
+
+    .princess-heading {
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(28px, 4vw, 42px);
+      font-weight: 600;
+      color: #89445f;
+    }
+
+    .hero-description {
+      max-width: 540px;
+      font-size: 15px;
+      line-height: 2;
+      margin: 16px auto 25px;
+    }
+
+    .floral {
+      font-size: 32px;
+      letter-spacing: 7px;
+      margin: 15px 0;
+    }
+
+    .heart-rsvp {
+      width: 170px;
+      height: 160px;
+      margin-top: 25px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      text-decoration: none;
+      color: white;
+      animation: heartWiggle 2.6s ease-in-out infinite;
+      filter: drop-shadow(0 10px 16px #e49ab6);
+      cursor: pointer;
+      isolation: isolate;
+    }
+
+    .heart-rsvp::before {
+      content: "♥";
+      position: absolute;
+      z-index: -1;
+      font-family: Arial, sans-serif;
+      font-size: 205px;
+      line-height: 1;
+      color: #d8759b;
+      text-shadow:
+        0 0 12px #ffc3da,
+        0 0 30px #ffb7d0;
+    }
+
+    .heart-rsvp span {
+      font-size: 16px;
+      font-weight: 700;
+      line-height: 1.5;
+      text-align: center;
+      max-width: 95px;
+      margin-top: -15px;
+      text-shadow: 0 1px 3px #a84c72;
+    }
+
+    .heart-rsvp:hover {
+      color: white;
+      animation: heartWiggle .55s ease-in-out infinite;
+      filter:
+        drop-shadow(0 0 12px #ff9ec4)
+        drop-shadow(0 0 25px #ffd5e5);
+    }
+
+    .heart-rsvp:focus-visible {
+      outline: 3px solid #91385e;
+      outline-offset: 10px;
+      border-radius: 50%;
+    }
+
+    .heart-rsvp:active {
+      transform: scale(.9);
+    }
+
+    @keyframes heartWiggle {
+      0%, 100% { transform: rotate(0) scale(1); }
+      25% { transform: rotate(-5deg) scale(1.04); }
+      50% { transform: rotate(5deg) scale(1.09); }
+      75% { transform: rotate(-3deg) scale(1.04); }
+    }
+
+    .sparkle {
+      position: absolute;
+      color: #fff7b6;
+      font-size: 23px;
+      pointer-events: none;
+      animation: sparkleTwinkle 1.5s infinite alternate;
+    }
+
+    .sparkle.one {
+      top: 12px;
+      left: 12px;
+    }
+
+    .sparkle.two {
+      top: 25px;
+      right: 7px;
+      animation-delay: .5s;
+    }
+
+    .sparkle.three {
+      bottom: 18px;
+      right: 28px;
+      animation-delay: 1s;
+    }
+
+    @keyframes sparkleTwinkle {
+      from {
+        opacity: .25;
+        transform: scale(.7) rotate(0);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1.3) rotate(30deg);
+      }
+    }
+
+    .heart-rsvp.clicked {
+      animation: heartJump .6s ease;
+    }
+
+    @keyframes heartJump {
+      0%, 100% { transform: translateY(0) scale(1); }
+      40% { transform: translateY(-28px) scale(1.15); }
+      70% { transform: translateY(4px) scale(.95); }
+    }
+
+    .petals {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .petal {
+      position: absolute;
+      top: -12%;
+      font-size: 23px;
+      opacity: .65;
+      animation: petalFall linear infinite;
+    }
+
+    .petal:nth-child(1) { left: 5%; animation-duration: 13s; }
+    .petal:nth-child(2) { left: 20%; animation-duration: 17s; animation-delay: -8s; }
+    .petal:nth-child(3) { left: 38%; animation-duration: 15s; animation-delay: -5s; }
+    .petal:nth-child(4) { left: 62%; animation-duration: 18s; animation-delay: -10s; }
+    .petal:nth-child(5) { left: 82%; animation-duration: 14s; animation-delay: -3s; }
+    .petal:nth-child(6) { left: 95%; animation-duration: 20s; animation-delay: -13s; }
+
+    @keyframes petalFall {
+      0% {
+        transform: translateY(-10vh) rotate(0);
+        opacity: 0;
+      }
+      10% { opacity: .7; }
+      90% { opacity: .7; }
+      100% {
+        transform: translateY(115vh) translateX(80px) rotate(360deg);
+        opacity: 0;
+      }
+    }
+
+    .section-title {
+      font-family: "Italianno", "Great Vibes", cursive;
+      font-size: clamp(65px, 9vw, 95px);
+      line-height: 1.1;
+      color: var(--rose);
+    }
+
+    .invitation-card {
+      position: relative;
+      background: rgba(255, 255, 255, .94);
+      border: 1px solid #f2c9d8;
+      border-radius: 35px;
+      padding: 55px 30px;
+      box-shadow: 0 16px 45px #e7a8bd25;
+    }
+
+    .invitation-card::before {
+      content: "✧";
+      position: absolute;
+      top: 16px;
+      left: 22px;
+      color: #db9bb6;
+      font-size: 23px;
+    }
+
+    .invitation-card::after {
+      content: "✧";
+      position: absolute;
+      bottom: 16px;
+      right: 22px;
+      color: #db9bb6;
+      font-size: 23px;
+    }
+
+    .event-date {
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(30px, 5vw, 43px);
+      font-weight: 600;
+      color: var(--rose);
+    }
+
+    .detail-label {
+      font-size: 11px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #a86a83;
+    }
+
+    .detail-value {
+      font-size: 19px;
+      margin-top: 8px;
+    }
+
+    .countdown {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+      margin-top: 30px;
+    }
+
+    .countdown-item {
+      background: #fff0f5;
+      border: 1px solid #f4cddd;
+      border-radius: 18px;
+      padding: 17px 6px;
+    }
+
+    .countdown-number {
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(26px, 5vw, 43px);
+      font-weight: 700;
+      color: var(--rose);
+    }
+
+    .countdown-label {
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
     }
 
     .btn-pink {
@@ -66,100 +360,248 @@
       color: white;
       border: none;
       border-radius: 40px;
-      padding: 13px 35px;
+      padding: 14px 32px;
       font-weight: 600;
+      text-decoration: none;
+      display: inline-block;
+      transition: transform .25s, background .25s;
     }
 
     .btn-pink:hover {
       background: var(--dark-pink);
       color: white;
+      transform: translateY(-3px);
     }
 
-    .section-title {
-      font-family: "Great Vibes", cursive;
-      font-size: 60px;
-      color: var(--dark-pink);
-    }
-
-    .invitation-card {
-      background: white;
-      border: 1px solid #f6d5e0;
-      border-radius: 25px;
-      padding: 45px 30px;
-      box-shadow: 0 12px 40px #e7a8bd25;
-    }
-
-    .floral {
-      font-size: 38px;
-      letter-spacing: 12px;
-    }
-
-    .form-control, .form-select {
+    .form-control,
+    .form-select {
       border: 1px solid #edcbd7;
-      border-radius: 12px;
-      padding: 12px;
+      border-radius: 14px;
+      padding: 13px;
     }
 
-    .form-control:focus, .form-select:focus {
+    .form-control:focus,
+    .form-select:focus {
       border-color: var(--pink);
       box-shadow: 0 0 0 3px #f8d6e2;
+    }
+
+    .form-label {
+      font-weight: 600;
+      color: #855269;
+    }
+
+    #rsvp {
+      scroll-margin-top: 30px;
+    }
+
+    .small-script {
+      font-family: "Great Vibes", cursive;
+      font-size: 34px;
+      color: var(--rose);
     }
 
     footer {
       background: #f9e1ea;
       color: var(--dark-pink);
       text-align: center;
-      padding: 30px;
+      padding: 35px 20px;
+    }
+
+    @media (max-width: 600px) {
+      .hero {
+        padding: 70px 20px;
+      }
+
+      .hero::before {
+        inset: 12px;
+        border-radius: 100px 100px 22px 22px;
+      }
+
+      .invitation-card {
+        padding: 38px 20px;
+      }
+
+      .floral {
+        font-size: 24px;
+        letter-spacing: 3px;
+      }
+
+      .countdown {
+        gap: 6px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+
+      .top-bow,
+      .hero-title,
+      .heart-rsvp,
+      .heart-rsvp:hover,
+      .heart-rsvp.clicked,
+      .sparkle,
+      .petal {
+        animation: none;
+      }
     }
   </style>
 </head>
 
 <body>
 
+  <!-- PRINCESS WELCOME PAGE -->
   <section class="hero">
-    <div class="bow">🎀</div>
-    <div class="subtitle mb-3">You're Invited To A</div>
 
-    <h1 class="script">Baby Shower</h1>
+    <div class="petals" aria-hidden="true">
+      <span class="petal">🌸</span>
+      <span class="petal">🌷</span>
+      <span class="petal">🌸</span>
+      <span class="petal">🌸</span>
+      <span class="petal">🌷</span>
+      <span class="petal">🌸</span>
+    </div>
 
-    <div class="floral my-3">🌸 🌷 🌸</div>
+    <div class="top-bow" aria-hidden="true">🎀</div>
 
-    <h2 class="h4 mt-3">A Little Princess Is on Her Way!</h2>
+    <div class="eyebrow">You're Invited to a</div>
 
-    <p class="mt-3">
-      A little bundle of joy, a whole lot of love.
-      Join us for a beautiful celebration filled with
-      sweet memories, laughter, and happiness.
+    <h1 class="hero-title">Baby Shower</h1>
+
+    <div class="crown" aria-hidden="true">👑</div>
+
+    <h2 class="princess-heading">
+      A Little Princess Is on Her Way!
+    </h2>
+
+    <div class="floral" aria-hidden="true">🌸 🌷 🎀 🌷 🌸</div>
+
+    <p class="hero-description">
+      A sprinkle of magic, a whole lot of love,
+      and a precious little princess sent from above.
+      Join us for an enchanting celebration
+      filled with sweet moments and beautiful memories.
     </p>
 
-    <a href="#rsvp" class="btn btn-pink mt-4">
-      RSVP Now ♡
+    <div class="small-script">With love, we invite you...</div>
+
+    <a href="#rsvp" class="heart-rsvp" id="heartRsvp"
+       aria-label="Kindly RSVP, jump to the RSVP form">
+      <span>Kindly<br>RSVP ♡</span>
+      <b class="sparkle one" aria-hidden="true">✦</b>
+      <b class="sparkle two" aria-hidden="true">✧</b>
+      <b class="sparkle three" aria-hidden="true">✦</b>
     </a>
+
+    <p style="font-size:12px;letter-spacing:2px;margin-top:20px">
+      TAP THE HEART TO RSVP
+    </p>
   </section>
 
+  <!-- EVENT DETAILS -->
   <section class="container py-5 text-center">
-    <div class="invitation-card mx-auto" style="max-width:650px">
-      <div class="floral">🌷 🎀 🌷</div>
+    <div class="invitation-card mx-auto" style="max-width:700px">
 
-      <h2 class="section-title mt-4">Save the Date</h2>
+      <div class="floral" aria-hidden="true">🌷 🎀 🌷</div>
 
-      <p class="mt-4"><strong>Date:</strong> To Be Announced</p>
-      <p><strong>Time:</strong> To Be Announced</p>
-      <p><strong>Location:</strong> To Be Announced</p>
+      <h2 class="section-title mt-3">Save the Date</h2>
+
+      <div class="event-date mt-4">
+        Sunday, November 29, 2026
+      </div>
+
+      <div class="row mt-4 gy-4">
+        <div class="col-sm-6">
+          <div class="detail-label">Celebration Time</div>
+          <div class="detail-value">5:00 PM CST</div>
+        </div>
+
+        <div class="col-sm-6">
+  <div class="detail-label">Location</div>
+  <div class="detail-value" id="locationText">
+    5612 Las Lomas Ln, Denton, TX 76208
+  </div>
+</div>
+          </div>
+        </div>
+      </div>
 
       <p class="mt-4">
         We can't wait to celebrate this special day with you!
       </p>
+
+      <h3 class="small-script mt-4">Counting down to the magic...</h3>
+
+      <div class="countdown" id="countdown">
+        <div class="countdown-item">
+          <div class="countdown-number" id="days">--</div>
+          <div class="countdown-label">Days</div>
+        </div>
+        <div class="countdown-item">
+          <div class="countdown-number" id="hours">--</div>
+          <div class="countdown-label">Hours</div>
+        </div>
+        <div class="countdown-item">
+          <div class="countdown-number" id="minutes">--</div>
+          <div class="countdown-label">Minutes</div>
+        </div>
+        <div class="countdown-item">
+          <div class="countdown-number" id="seconds">--</div>
+          <div class="countdown-label">Seconds</div>
+        </div>
+      </div>
+
     </div>
   </section>
 
-  <section id="rsvp" class="container py-5">
-    <div class="invitation-card mx-auto" style="max-width:650px">
+  <!-- DRESS CODE -->
+  <section class="container pb-5 text-center">
+    <div class="invitation-card mx-auto" style="max-width:700px">
+      <div class="floral" aria-hidden="true">🎀 🌸 🎀</div>
+
+      <h2 class="section-title">Dress Code</h2>
+
+      <p class="mt-3">
+        Wear something lovely and come ready to celebrate.
+      </p>
+    </div>
+  </section>
+
+  <!-- GIFT REGISTRY -->
+  <section class="container pb-5 text-center">
+    <div class="invitation-card mx-auto" style="max-width:700px">
+      <div class="floral" aria-hidden="true">🎁 🎀 🎁</div>
+
+      <h2 class="section-title">Baby Registry</h2>
+
+      <p class="mt-3">
+        Your love and presence are the sweetest gifts.
+        For those who wish to shower our little princess
+        with something special, we've created a baby registry.
+      </p>
+
+      <a class="btn-pink mt-3"
+         href="https://www.amazon.com/baby-reg/feby-febin-january-2027-denton/255Y771G9LL1A"
+         target="_blank"
+         rel="noopener noreferrer">
+        View Our Baby Registry ♡
+      </a>
+    </div>
+  </section>
+
+  <!-- RSVP FORM -->
+  <section id="rsvp" class="container pb-5">
+    <div class="invitation-card mx-auto" style="max-width:700px">
 
       <div class="text-center">
-        <div class="floral">🌸 🎀 🌸</div>
-        <h2 class="section-title mt-3">Kindly RSVP</h2>
-        <p>Please let us know if your family can join us.</p>
+        <div class="floral" aria-hidden="true">🌸 🎀 🌸</div>
+
+        <h2 class="section-title">Kindly RSVP</h2>
+
+        <p>
+          Please let us know if your family can join us
+          for this special celebration.
+        </p>
       </div>
 
       <form id="rsvpForm">
@@ -176,6 +618,7 @@
           <label for="attending" class="form-label">
             Will you be attending?
           </label>
+
           <select class="form-select" id="attending" required>
             <option value="">Select an option</option>
             <option value="Yes">Yes, we'll be there! 💗</option>
@@ -187,6 +630,7 @@
           <label for="familyMembers" class="form-label">
             Number of Family Members Attending
           </label>
+
           <input type="number" class="form-control"
                  id="familyMembers" min="0" max="100"
                  placeholder="Including yourself" required>
@@ -196,31 +640,90 @@
           <label for="message" class="form-label">
             Message for the Parents (Optional)
           </label>
+
           <textarea class="form-control" id="message"
                     rows="3" maxlength="500"></textarea>
         </div>
 
-        <button type="submit" class="btn btn-pink w-100">
+        <button type="submit" class="btn-pink w-100"
+                id="submitRsvp">
           Send My RSVP ♡
         </button>
 
+        <p id="formStatus" class="mt-3 text-center"
+           role="status" aria-live="polite"></p>
       </form>
 
       <div id="thankYou" class="text-center mt-4"
            style="display:none">
+        <div style="font-size:45px">🎀💗🌸</div>
         <h3 class="section-title">Thank You!</h3>
-        <p>Thank you for your RSVP! 🎀💗</p>
+        <p>
+          Thank you for your RSVP!
+          We can't wait to celebrate with you.
+        </p>
       </div>
 
     </div>
   </section>
 
   <footer>
+    <div class="small-script">A Little Princess Is on Her Way</div>
     <div>🎀 Made with Love 🎀</div>
-    <small>Celebrating a Little Princess</small>
+    <small>November 29, 2026 • 5:00 PM</small>
   </footer>
 
   <script>
+    // EVENT COUNTDOWN
+    // November 29, 2026 at 5 PM Central Standard Time
+    const eventDate = new Date("2026-11-29T17:00:00-06:00");
+
+    function updateCountdown() {
+      const remaining = eventDate.getTime() - Date.now();
+
+      if (remaining <= 0) {
+        document.getElementById("countdown").innerHTML =
+          "<p class='w-100'>The celebration is here! 🎀</p>";
+        clearInterval(countdownTimer);
+        return;
+      }
+
+      document.getElementById("days").textContent =
+        Math.floor(remaining / 86400000);
+
+      document.getElementById("hours").textContent =
+        Math.floor((remaining / 3600000) % 24);
+
+      document.getElementById("minutes").textContent =
+        Math.floor((remaining / 60000) % 60);
+
+      document.getElementById("seconds").textContent =
+        Math.floor((remaining / 1000) % 60);
+    }
+
+    const countdownTimer = setInterval(updateCountdown, 1000);
+    updateCountdown();
+
+    // JIGGLY HEART BUTTON
+    const heartRsvp = document.getElementById("heartRsvp");
+
+    heartRsvp.addEventListener("click", function (event) {
+      event.preventDefault();
+
+      heartRsvp.classList.remove("clicked");
+      void heartRsvp.offsetWidth;
+      heartRsvp.classList.add("clicked");
+
+      setTimeout(function () {
+        document.getElementById("rsvp").scrollIntoView({
+          behavior: window.matchMedia(
+            "(prefers-reduced-motion: reduce)"
+          ).matches ? "auto" : "smooth"
+        });
+      }, 450);
+    });
+
+    // FAMILY ATTENDANCE
     const attending = document.getElementById("attending");
     const familyMembers = document.getElementById("familyMembers");
 
@@ -228,41 +731,60 @@
       if (this.value === "No") {
         familyMembers.value = 0;
         familyMembers.min = 0;
+        familyMembers.max = 0;
       } else {
         familyMembers.value = "";
         familyMembers.min = 1;
+        familyMembers.max = 100;
       }
     });
 
-    const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwL9kZevnHnxqsID9-llhgU5TmXGgRuwTGLCnGzgbmaVByeUmElBI7hBR1BYTToHxqi/exec";
+    // GOOGLE SHEETS CONNECTION
+    const SCRIPT_URL =
+      "https://script.google.com/macros/s/AKfycbwL9kZevnHnxqsID9-llhgU5TmXGgRuwTGLCnGzgbmaVByeUmElBI7hBR1BYTToHxqi/exec";
+
     const rsvpForm = document.getElementById("rsvpForm");
+    const submitButton = document.getElementById("submitRsvp");
+    const formStatus = document.getElementById("formStatus");
 
-rsvpForm.addEventListener("submit", async function (event) {
-  event.preventDefault();
+    rsvpForm.addEventListener("submit", async function (event) {
+      event.preventDefault();
 
-  const data = {
-    name: document.getElementById("guestName").value.trim(),
-    attending: attending.value,
-    familyMembers: Number(familyMembers.value),
-    message: document.getElementById("message").value.trim()
-  };
+      const data = {
+        name: document.getElementById("guestName").value.trim(),
+        attending: attending.value,
+        familyMembers: Number(familyMembers.value),
+        message: document.getElementById("message").value.trim()
+      };
 
-  try {
-    await fetch(SCRIPT_URL, {
-      method: "POST",
-      mode: "no-cors",
-      headers: {
-        "Content-Type": "text/plain"
-      },
-      body: JSON.stringify(data)
+      submitButton.disabled = true;
+      submitButton.textContent = "Sending your RSVP...";
+      formStatus.textContent = "";
+
+      try {
+        await fetch(SCRIPT_URL, {
+          method: "POST",
+          mode: "no-cors",
+          headers: {
+            "Content-Type": "text/plain"
+          },
+          body: JSON.stringify(data)
+        });
+
+        // With no-cors, the browser cannot verify
+        // whether Google Sheets saved the response.
+        rsvpForm.style.display = "none";
+        document.getElementById("thankYou").style.display = "block";
+
+        rsvpForm.reset();
+      } catch (error) {
+        formStatus.textContent =
+          "We couldn't send your RSVP. Please try again.";
+      } finally {
+        submitButton.disabled = false;
+        submitButton.textContent = "Send My RSVP ♡";
+      }
     });
-
-    alert("Thank you for your RSVP! 🎀");
-    rsvpForm.reset();
-  } catch (error) {
-    alert("Something went wrong. Please try again.");
-  }
-});
   </script>
 
 </body>
