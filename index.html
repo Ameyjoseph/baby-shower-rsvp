@@ -660,19 +660,25 @@
   }
 }
 
-/* MAKE BABY REGISTRY TEXT FIT INSIDE HEART */
-.princess-heart-buttons .registry-heart span {
-  font-size: 13px;
+
+/* MATCHING CENTERED TEXT FOR BOTH HEARTS */
+.princess-heart-buttons .heart-rsvp > span {
+  font-size: 14px;
   line-height: 1.2;
-  max-width: 85px;
-  white-space: nowrap;
+  font-weight: 700;
+  text-align: center;
+  width: 100%;
+  max-width: 95px;
   margin-top: -12px;
+  white-space: nowrap;
 }
 
 @media (max-width: 600px) {
-  .princess-heart-buttons .registry-heart span {
-    font-size: 12px;
-    max-width: 80px;
+  .princess-heart-buttons .heart-rsvp > span {
+    font-size: 13px;
+    line-height: 1.2;
+    max-width: 90px;
+    margin-top: -10px;
   }
 }
 
@@ -721,7 +727,7 @@
 
   <a href="#rsvp" class="heart-rsvp" id="heartRsvp"
      aria-label="Kindly RSVP">
-    <span>Kindly<br>RSVP ♡</span>
+    <span>Kindly<br>RSVP<br>♡</span>
     <b class="sparkle one" aria-hidden="true">✦</b>
     <b class="sparkle two" aria-hidden="true">✧</b>
     <b class="sparkle three" aria-hidden="true">✦</b>
