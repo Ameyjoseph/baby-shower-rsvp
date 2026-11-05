@@ -785,7 +785,20 @@ body.invitation-locked {
   font-size: 13px;
   letter-spacing: 2px;
 }
+/* Hide the words before opening */
+.royal-paper-words,
+.royal-paper-detail {
+  opacity: 0;
+  transition: opacity 0.6s ease;
+}
 
+/* Show words after touching the bow */
+#royalOpening.untying .royal-paper-words,
+#royalOpening.untying .royal-paper-detail {
+  opacity: 1;
+  transition-delay: 0.4s;
+}
+    
 .royal-ribbon {
   position: absolute;
   z-index: 3;
